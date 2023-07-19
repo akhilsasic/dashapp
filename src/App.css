@@ -1,0 +1,305 @@
+body {
+  background-image: url('../public/D3.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  margin-top: 1%;
+  margin-bottom: 10% !important; /* Add margin-bottom with !important */
+  margin-left: 1%; /* Add margin-left */
+  width: 14vw;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid#2BA1F9;
+  background-color: #ffffff;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.menu-item:hover {
+  /* Background and border color on hover */
+  background-color: #2BA1F9;
+  border-color: #2BA1F9;
+}
+
+.menu-item:hover .text {
+  /* Text color on hover */
+  color: #ffffff;
+}
+
+.menu-item:hover .logo {
+  /* Logo background color on hover */
+  background-color: #ffffff;
+  /* Logo color (icon) on hover */
+  color: #2BA1F9;
+}
+
+.logo {
+  display: flex;
+  align-items: space-between;
+  margin-bottom: 20px;
+}
+
+.logo-icon {
+  /* Logo styles, adjust as needed */
+  background-color: #6CC1F4;
+  border-radius: 10px;
+  width: 3vw;
+  height: 3vh;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+.logo-text {
+  /* Text styles, adjust as needed */
+  margin-left: 8px;
+  font-size: 18px;
+}
+
+
+
+.pi-chart {
+  width: 100%;
+  max-width: 160px; /* Set a maximum width to prevent overflowing */
+  height: auto; /* Let the height adjust proportionally */
+  margin-bottom: 20px;
+}
+
+
+.chart-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
+.menu {
+  display: flex;
+  flex-direction: column; /* To stack the menu items vertically */
+  flex-wrap: wrap; /* Allow menu items to wrap when there's not enough space */
+  max-height: 400px; /* Set a maximum height to limit the menu's height */
+  overflow-y: auto; /* Add vertical scrollbar when menu overflows */
+}
+
+.menu-item {
+  width: 14vw;
+  height: 3vh;
+  display: flex;
+  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 10px;
+  border: 1px solid #2BA1F9;
+  padding: 8px; /* Add padding to create space between the logo and text */
+}
+
+.menu-item .text {
+  flex: 1; /* Let the text take the remaining available width */
+  color: #2BA1F9;
+}
+
+
+
+.menu-item .logo {
+  width: 30px;
+  height: 30px;
+  
+  border-radius: 10px;
+  margin-bottom: 4px;
+  margin-top: 4px;
+  margin-left: 8px;
+  margin-right: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.menu-item .logo .l-image {
+  width: 25px;
+  height: 25px;
+}
+
+
+
+
+.menu-item:hover .logo {
+  background-color: #2BA1F9;
+}
+
+.content {
+  flex: 1;
+  
+  padding: 20px;
+}
+
+.top-section {
+  display: flex;
+  border-radius: 20px 20px 0 0; /* Curve the top side */
+  align-items: center;
+  border: 1px solid #2BA1F9;
+  background-color: #ffffff;
+  height: 10%;
+}
+
+.menu-icon {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-weight: bold;
+  height: 22px;
+  width: 22px;
+}
+.tm-image {
+  /* Set the image to fit inside the menu-icon */
+  height: 100%;
+  width: 100%;
+  /* Ensure the image doesn't stretch and maintains its aspect ratio */
+  object-fit: contain;
+}
+
+.search-bar {
+  height: 24px;
+  width: 40vw !important;
+  background-color: #ffffff;
+  border: 1px solid #2BA1F9;
+  border-radius: 15px;
+  margin-right: 10px;
+  width: 100%;
+  position: relative; /* Add relative positioning */
+}
+
+.search-input {
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 0 10px;
+  font-size: 16px;
+  color: #2BA1F9; /* Text color when typing */
+}
+
+/* Style the placeholder text */
+.search-input::placeholder {
+  color: rgba(43, 161, 249, 0.5); /* Low opacity placeholder text color */
+}
+
+/* Style the placeholder text when the input is focused */
+.search-input:focus::placeholder {
+  color: transparent; /* Make the placeholder text transparent when focused */
+}
+
+
+
+.user {
+  margin-left: auto; /* Push the username and logo to the right */
+  display: flex;
+  align-items: center;
+}
+.username {
+  margin-left: auto;
+  margin-right: 10px;
+}
+
+.user-image {
+  width: 30px;
+  height: 30px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.graph {
+  height: 58%;
+  background-color: #ffffff;
+  border: 1px solid #2BA1F9;
+  
+  position: relative; /* Add relative positioning */
+}
+
+
+.performance {
+  display: flex;
+  justify-content: space-between;
+  background-color: #ffffff;
+  border-radius: 0 0 20px 20px;
+
+  
+}
+
+.performance-item {
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 27%;
+  background-color: #ffffff;
+  border: 1px solid#2BA1F9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(43, 161, 249, 0.2);
+  
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.performance-chart {
+  width: 120px;
+  height: 120px;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.p-image {
+  max-width: 100%;
+  max-height: 100%;
+}
+.performance-text {
+  margin-top: 10px;
+  color: #2BA1F9;
+}
+
+.performance-right-text {
+  margin-top: 10px;
+  font-weight: bold;
+ color: #2BA1F9;
+}
+
+.performance-amount {
+  margin-top: 10px;
+  font-weight: bold;
+  color: #030BCE;
+
+}
+
+.performance-vector {
+  width: 50px;
+  height: 50px;
+  background-color: #ffffff;
+  margin-top: 10px;
+}
+
+.u-image{
+  margin: 2px 2px 6px 2px;
+}
+
+.g-image {
+  position: absolute; /* Add absolute positioning */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensure the image covers the entire container */
+}
+
+
