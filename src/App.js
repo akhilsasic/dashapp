@@ -1,12 +1,26 @@
 import React, { useState } from 'react';
 import './App.css';
-import menulogoImage1 from '../src/Group 14.png';
-import menuwhiteImage from '../src/menupluswhite.png';
-import piChartImage from '../src/sidebarimage1.png';
 import performImage from '../src/performiage.png';
 import upImage from '../src/upimage.png';
 import graphImage from '../src/areachart.png';
 import topmenuImage from '../src/Vector.png';
+import { LineChart, Line } from 'recharts'
+import Sidebar from './components/Sidebar';
+
+const data = [
+  { name: 'Page A', uv: 400, pv: 2400, amt: 2400 },
+  { name: 'Page B', uv: 200, pv: 1200, amt: 1600 },
+  { name: 'Page C', uv: 600, pv: 3600, amt: 3000 },
+  { name: 'Page A', uv: 400, pv: 2400, amt: 2400 }, // Duplicate entry
+  { name: 'Page D', uv: 800, pv: 4800, amt: 4000 },
+  // Add more data points as needed
+];
+
+const renderLineChart = (
+  <LineChart width={400} height={400} data={data}>
+    <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+  </LineChart>
+);
 
 const App = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -21,163 +35,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <div className="sidebar">
-        <div className="logo">
-          <div className="logo-icon">
-            {/* Logo for the menu item */}
-          </div>
-          <div className="logo-text">
-            {/* Text for the logo */}
-            DASH
-          </div>
-        </div>
-        <div className="pi-chart">
-          {/* Vector image like a pi chart */}
-          <img src={piChartImage} alt="Pi Chart" className="p-image" />
-        </div>
-        <div className="menu">
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          <div
-            className="menu-item"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <div className="logo">
-              {/* Logo for the menu item */}
-              <img
-                src={isHovered ? menuwhiteImage : menulogoImage1}
-                alt="menu logo"
-                className="l-image"
-                style={{
-                  width: '30px',
-                  height: '30px',
-                  borderRadius: '10px',
-                }}
-              />
-            </div>
-            <div className="text">
-              {/* Text for the menu item */}
-              Business Units 1
-            </div>
-          </div>
-          {/* Repeat the above structure for other menu items */}
-          
-        </div>
-      </div>
+    <Sidebar/>
       <div className="content">
         <div className="top-section">
           {/* Menu icon */}
@@ -203,7 +61,8 @@ const App = () => {
         </div>
         <div className="graph">
           {/* Graph generated inside the rectangle */}
-          <img src={graphImage} alt="graph" className="g-image" />
+          {/* <img src={graphImage} alt="graph" className="g-image" /> */}
+          {renderLineChart}
         </div>
         <div className="performance">
           {/* First rectangle */}
